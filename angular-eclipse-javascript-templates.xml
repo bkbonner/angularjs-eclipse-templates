@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Define a $broadcast for a $scope inside an Angular Controller / Angular Controller Function. You can change the event name and optional event arguments."
+		enabled="true" name="$b">$$scope.$$broadcast('${eventName}', ${eventArgs});
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Define an $emit for a $scope inside an Angular Controller / Angular Controller Function. You can change the event name and optional event arguments."
+		enabled="true" name="$e">$$scope.$$emit('${eventName}', ${eventArgs});
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Define a new $scope'd function (usually inside an AngularJS Controller). You can change the function name and arguments."
+		enabled="true" name="$f">$$scope.${functionName} = function(${args}) {
+		${cursor}
+		};
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Define a $on for a $broadcast/$emit on the $scope inside an Angular Controller. You can change the event name to listen on."
+		enabled="true" name="$on">$$scope.$$on('${eventName}', function(event,
+		${args}) {
+		${cursor}
+		});
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Defines a new $scope'd variable inside an AngularJS controller."
+		enabled="true" name="$v">$$scope.${variable} = ${value};
+		${cursor}
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Defines a new $scope'd variable inside an AngularJS controller and assigns a value from a contstructor arguments."
+		enabled="true" name="$va">$$scope.${variable} = ${variable};
+		${cursor}
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Define a $watch for an expression. You can change the expression  to be watched."
+		enabled="true" name="$w">$$scope.$$watch('${watchExpr}',function(newValue,
+		oldValue){
+		${cursor}
+		});
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="A binding in AngularJS" enabled="true" name="ngb">{
+		{${binding}} }${cursor}</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Define a new Angular Controller. You can change the controller name and parameters."
+		enabled="true" name="ngc">var ${controllerName} = function($$scope,
+		${injectable}) {
+		${cursor}
+		}
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="a directive with  the compile function" enabled="true"
+		name="ngdc">.directive('${directiveName}', function factory(${injectables}) {
+		var directiveDefinitionObject = {
+		${directiveAttrs}
+		compile: function compile(tElement, tAttrs, transclude) {
+		${cursor}
+		return function (scope, element, attrs) {
+		}
+		}
+		};
+		return directiveDefinitionObject;
+		})
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="a directive with the link function" enabled="true" name="ngdl">.directive('${directiveName}',
+		function(${directiveDeps}) {
+		return function(scope, element, attrs) {
+		${cursor}
+		}
+		});
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="angular.foreach loop" enabled="true" name="ngfor">angular.forEach(${iterateOver},
+		function(value, key){
+		${cursor}
+		});
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="A new angular module without a config function." enabled="true"
+		name="ngm">angular.module('${moduleName}',[${moduleDependencies}]);
+		${cursor}
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="A new angular module without a config function and a variable assigment."
+		enabled="true" name="ngma">var ${moduleName} =
+		angular.module('${moduleName}',[${moduleDeps}]);
+		${cursor}
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="A new angular module with a config function" enabled="true"
+		name="ngmc">var ${moduleName} =
+		angular.module('${moduleName}',[${moduleDeps}],
+		function(${configDeps}){
+		${cursor}
+		});
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="A factory in a module" enabled="true" name="ngmfa">factory('${factoryName}',
+		function(${dependencies}){
+		${cursor}
+		});
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Define an Angular Module Filter to be attached to a previously defined module. You can change the filter name."
+		enabled="true" name="ngmfi">filter('${filterName}', function(${injectable}) {
+		return function(input, ${args}) {
+		${cursor}
+		};
+		})
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Define an Angular Module Service to be attached to a previously defined module. You can change the service name and service injectables."
+		enabled="true" name="ngms">service('${serviceName}', function(${injectable})
+		{
+		${cursor}
+		});
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Defines an otherwise condition of an AngularJS route."
+		enabled="true" name="ngro">$$routeProvider.otherwise(redirectTo : '${url}'});
+		${cursor}
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Defines a when condition of an AngularJS route." enabled="true"
+		name="ngrw">$$routeProvider.when('${url}', {
+		templateUrl: '${templateUrl}',
+		controller: '${controller}'
+		});
+		${cursor}
+	</template>
+	<template autoinsert="true" context="javaScript" deleted="false"
+		description="Defines a when condition of an AngularJS route with the resolve block."
+		enabled="true" name="ngrwr">$$routeProvider.when('${url}', {
+		templateUrl: '${templateUrl}',
+		controller: '${controller}',
+		resolve: {
+		${cursor}
+		}
+		});
+	</template>
+</templates>
